@@ -7,15 +7,4 @@ function mongoConfig() {
     });
 }
 
-module.exports = async() => {
-    const connectionParams = {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    };
-    try {
-        await mongoose.connect(process.env.MONGO_DB, connectionParams);
-        console.log('Connected to Mongo database ');
-    } catch (err) {
-        console.log('Error connecting to Mongo database: ', err);
-    }
-} 
+module.exports = mongoConfig;

@@ -1,7 +1,6 @@
 const express = require('express');
 const methodOverride = require('method-override');
-const connection = require('./config');
-
+const mongoConfig = require('./config');
 // Bring in the packaged routes
 
 
@@ -23,5 +22,6 @@ app.use(express.json());
 // listen on port 
 app.listen(port, () => console.log(`listening on port ${port}`));
 
-// Connect to MongoDB
-connection();
+// Connect to MongoDB 
+mongoConfig();
+
