@@ -1,7 +1,7 @@
 const express = require('express');
 const methodOverride = require('method-override');
 const mongoConfig = require('./config');
-// Bring in the packaged routes
+const jwt = require('jsonwebtoken');
 
 
 require('dotenv').config();
