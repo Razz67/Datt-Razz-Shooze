@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 
 // New Route
 router.get('/new', (req, res) => {
-    res.render('products/New');
+    res.render('products/new');
 });
 
 // Delete Route
