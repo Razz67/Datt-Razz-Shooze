@@ -1,35 +1,34 @@
-const express = require('express');
-const methodOverride = require('method-override');
-const mongoose = require('mongoose');
-const mongoConfig = require('./config');
-const path = require('path');
-const jwt = require('jsonwebtoken');
+// Load express
+const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
+require("dotenv").config();
+const mongooseConfig = require("./config")// Load mongoose
+const methodOverride = require("method-override");
 
+// Load our routes
+const productsRoute = require("./routes/productsRoute");
 
+// Identify our port
+const port = process.env.PORT;
 
-require('dotenv').config();
-
-// Set up view engine
-app.set('view engine', 'ejs');
+// setup our view engine
+app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
 
-// ********** Middleware **********
-app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride('_method'));
+// Middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
+app.use(express.static("public"));
 
-// serve client files
-if(process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-    app.get('*', (req, res) => {
-      res.sendFile(path.resolve(__dirname,'client','build','index.html'));
-    });
-}
 
-// listen on port 
-app.listen(port, () => console.log(`listening on port ${port}`));
+app.use("/products", productsRoute);
 
-// Connect to MongoDB 
-mongoConfig();
+
+// Listen to port
+app.listen(port, () => {
+	console.log("Listening on port: ", port);
+});
+
+// Load mongoose
+mongooseConfig();
