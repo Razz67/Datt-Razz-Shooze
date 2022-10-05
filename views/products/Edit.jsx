@@ -4,18 +4,14 @@ const DefaultLayout = require("../layouts/DefaultLayout");
 class Edit extends React.Component {
 	render() {
         const {_id, title, description, category, price, instock,image} = this.props.products;
-									
 
 		return (
 			<DefaultLayout title={`Edit ${title}`} productGroup="products">
 
 				<h1>{title}</h1>
 
-				<form action={`/products/${_id}?_method=PUT`} method="POST">
 
-					Category:{" "}<input type="text" id="category" name="category"
-						defaultValue={category} />
-						<br /><br />
+				<form action={`/products/${_id}?_method=PUT`} method="POST">
 
 					Image:{" "}<input type="text" id="image" name="image" defaultValue={image} />
 					<br /> <br />
@@ -31,7 +27,7 @@ class Edit extends React.Component {
 					<br /><br />
 
 
-					<a href={`/products/${_id}/edit`}>Back</a>
+					<a href={`/products/`}>Back</a>
 					<br /><br />
 					
                     <button type="submit" value="Edit">Edit</button>

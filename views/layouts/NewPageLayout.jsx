@@ -1,6 +1,6 @@
 const React = require("react");
 
-class DefaultLayout extends React.Component {
+class NewPageLayout extends React.Component {
 	render() {
 		return (
 			<html>
@@ -9,9 +9,8 @@ class DefaultLayout extends React.Component {
 					<link rel="stylesheet" href="/css/cardStyles.css" />
 				</head>
 				<body>
-					
-						
-					<div className="bg"></div>
+					<div className="wrapper">
+					</div>
 					{this.props.children}
 				</body>
 			</html>
@@ -19,4 +18,4 @@ class DefaultLayout extends React.Component {
 	}
 }
 
-module.exports = DefaultLayout;
+module.exports = NewPageLayout;

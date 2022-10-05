@@ -9,22 +9,24 @@ class Show extends React.Component {
 
 		return (
 			<DefaultLayout title={`${title} details`} productGroup="products">
-				<h1>{title}</h1>
-				<h3>{category}</h3>
-				<img src={image} />
-				<p>{`Product Description: ${description}`}</p>
-				<p>{`Product Price: ${price}.`}</p>
-				<p>{instock ? "It is in stock!" : "It is NOT in stock!"}</p>
+				<div className="wrapper">
+					<h1>{title}</h1>
+					<h3>{category}</h3>
+					<img src={image} />
+					<p>{`Product Description: ${description}`}</p>
+					<p>{`Product Price: $${price.toFixed(2)}`}</p>
+					<p>{instock ? "It is in stock!" : "It is NOT in stock!"}</p>
 
-				<form action={`/products/${_id}?_method=DELETE`} method="POST">
-				<input type="submit" value="Delete Product" />
-					
-					
-					<br /><br />
-				</form>
-				<button>
-					<a href={`/products/${_id}/edit`}>Back</a>
-				</button>
+					<form action={`/products/${_id}?_method=DELETE`} method="POST">
+						<input type="submit" value="Delete Product" />
+
+						<br />
+						<br />
+					</form>
+					<button>
+						<a href={`/products/${_id}/edit`}>Back</a>
+					</button>
+				</div>
 			</DefaultLayout>
 		);
 	}

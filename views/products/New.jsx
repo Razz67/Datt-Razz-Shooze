@@ -5,10 +5,13 @@ class New extends React.Component {
 	render() {
 		return (
 
-			<DefaultLayout className="flex" title="New Product" productGroup="products">
+			<DefaultLayout className="bg" title="New Product" productGroup="products">
 				<h1>Create New Product</h1>
 
 				<form action="/products" method="POST">
+
+				<img src="/images/shoe2.jpg" />
+				<br /><br />
 
 				<input type="text" name="image" placeholder="new image url" />
 				<br /><br />
