@@ -49,7 +49,7 @@ const updateOneProduct = (req, res) => {
 
 // ROUTE    POST /Products    (create)
 const createNewProduct = (req, res) => {
-	if (req.body.instock > 0) {
+	if (req.body.instock > 0 && quantity > 0) {
 		req.body.instock = true;
 	} else {
 		req.body.instock = false;

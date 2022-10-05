@@ -17,7 +17,7 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
-/* .wrapper {
+.wrapper {
   display: flex;
   flex-direction: column;
   height: 400px;
@@ -25,7 +25,7 @@ html {
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 15px rgba(0, 0, 0m 0, .1);
-} */
+}
 
 .header {
   text-align: center;
@@ -44,11 +44,6 @@ a:hover {
   background-color: chartreuse;
   color: #000;
 }
-
-/* div > img:first-child {
-  margin-top: 40px;
-} */
-
 
 
 /*--------------------

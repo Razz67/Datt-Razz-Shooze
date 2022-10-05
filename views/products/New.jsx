@@ -13,7 +13,7 @@ class New extends React.Component {
 				<img src="/images/shoe2.jpg" />
 				<br /><br />
 
-				<input type="text" name="image" placeholder="new image url" />
+				Image: <input type="text" name="image" placeholder="new image url" />
 				<br /><br />
 
 					Title: <input type="text" name="title" placeholder="title" />
@@ -22,7 +22,10 @@ class New extends React.Component {
 					Description: <input type="text" name="description" placeholder="description" />
 					<br /><br />
 
-					stock: {this.props.instock}
+					Quantity: <input type="number" name="quantity" placeholder="quantity" />
+					<br /><br />
+
+					In stock: {this.props.instock}
 					<br /><br />
 
 					Price: <input type="number" name="price" placeholder="price" />

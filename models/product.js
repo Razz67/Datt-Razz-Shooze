@@ -19,6 +19,10 @@ const productSchema = new Schema({
         type: Number,
         required: true
     },
+    quantity: {
+        type: Number,
+        required: true
+    },
     instock: {
         type: Boolean,
         required: true

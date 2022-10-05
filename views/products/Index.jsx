@@ -7,15 +7,20 @@ class Index extends React.Component {
 
 		return (
 			<DefaultLayout>
+			
+					<h1 className="header">Datt Razz Shoozz</h1>
 					{products.map((products) => {
-						const { _id, title, description, price, instock, image } = products;
+						const { _id, title, description, price, instock, quantity, image } = products;
 
 						return (
 							<div className="wrapper" key={_id}>
-								<a className="title" href={`/products/${_id}`}>{title}</a>
+								<img src={image} />
+								<a className="title" href={`/products/${_id}`}>
+									{title}
+								</a>
 								<div className="desc">{description}</div>
 								<div className="price">${price.toFixed(2)}</div>
-								<img src={image} />
+								<div className="quantity">Quantity In Stock:{" "}{quantity}</div>
 								<div className="instock">{instock}</div>
 							</div>
 						);
@@ -29,13 +34,6 @@ class Index extends React.Component {
 	}
 }
 module.exports = Index;
-{/* <li key={_id}>
-								{console.log(products)}
-								<a href={`/products/${_id}`}>{title}</a>
-								<img src={image} />
-								{description}
-								{instock}
-								{price}
-							</li> */}
+								
 
-											{/* <h1 className="header">Datt Razz Shoozz</h1> */}
+											

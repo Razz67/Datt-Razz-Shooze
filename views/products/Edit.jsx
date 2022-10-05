@@ -7,8 +7,15 @@ class Edit extends React.Component {
 
 		return (
 			<DefaultLayout title={`Edit ${title}`} productGroup="products">
-
-				<h1>{title}</h1>
+				<nav>
+					<ul>
+					<li>
+						<a href={"/products"}>Back to Products</a>
+					</li>
+					</ul>
+				</nav>
+				<h1>Edit Product</h1>
+				<img src="/images/shoe4.jpg" />
 
 
 				<form action={`/products/${_id}?_method=PUT`} method="POST">
