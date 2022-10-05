@@ -1,82 +1,44 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-// load our Product model
-const Product = require('../models/products');
+
+const { 
+    showNewView,
+    seedData, 
+    showEditView, 
+    showOneProduct, 
+    createNewProduct, 
+    updateOneProduct, 
+    deleteOneProduct, 
+    findAllProducts 
+} = require('../controllers/productController');
+
 
 // Set up our routes
 
 // Index Route
-router.get('/', (req, res) => {
-    Product.find({}, (err, foundProducts) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-        }
-        // res.status(200).json(foundProducts);
-        res.status(200).render('products/Index', {
-            products: foundProducts
-        });
-    });
-});
+router.get('/', findAllProducts);
 
 // New Route
-router.get('/new', (req, res) => {
-    res.render('products/new');
-});
+router.get("/new", showNewView);
 
 // Delete Route
-router.delete('/:id', (req, res) => {
-    Product.findByIdAndRemove(req.params.id, (err, deletedProduct) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-        }
-        res.status(200).json(deletedProduct);
-    });
-});
+router.delete('/:id', deleteOneProduct);
 
 // Update Route
-router.put('/:id', (req, res) => {
-    Product.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        { new: true },
-        (err, updatedProduct) => {
-            if (err) {
-                res.status(400).json({ error: err.message });
-            }
-            res.status(200).json(updatedProduct);
-        }
-    );
-});
+router.put('/:id', updateOneProduct);
 
 // Create Route
-router.post('/', (req, res) => {
-    Product.create(req.body, (err, createdProduct) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-        }
-        res.status(200).json(createdProduct);
-    });
-});
+router.post('/', createNewProduct);
 
 // Edit Route
-router.get('/:id/edit', (req, res) => {
-    Product.findById(req.params.id, (err, foundProduct) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-        }
-        res.status(200).json(foundProduct);
-    });
-});
+router.get('/:id/edit', showEditView);
+
+// Seed Route
+router.get('/seed', seedData);
 
 // Show Route
-router.get('/:id', (req, res) => {
-    Product.findById(req.params.id, (err, foundProduct) => {
-        if (err) {
-            res.status(400).json({ error: err.message });
-        }
-        res.status(200).json(foundProduct);
-    });
-});
+router.get('/:id', showOneProduct);
+    
 
 module.exports = router

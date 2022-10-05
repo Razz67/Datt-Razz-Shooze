@@ -9,6 +9,7 @@ class DefaultLayout extends React.Component {
 					<link rel="stylesheet" href="/css/styles.css" />
 				</head>
 				<body>
+                <img src="/images/datt_razz.png" />
 					<nav>
 						<a href={`/${this.props.productGroup}`}>{this.props.productGroup}</a>
 					</nav>

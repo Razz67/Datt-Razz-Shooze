@@ -22,10 +22,11 @@ const productSchema = new Schema({
         type: Number,
         required: true
     },
-    date_added: {
-        type: Date,
-        default: Date.now
+    instock: {
+        type: Boolean,
+        required: true
     },
+    
     image: {
         type: String,
         required: true
