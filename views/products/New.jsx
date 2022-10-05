@@ -5,22 +5,28 @@ class New extends React.Component {
 	render() {
 		return (
 
-			<DefaultLayout title="New Product" productGroup="products">
-				<h1>New Product</h1>
+			<DefaultLayout className="flex" title="New Product" productGroup="products">
+				<h1>Create New Product</h1>
 
 				<form action="/products" method="POST">
 
-				<input type="text" name="image" placeholder="image" />
+				<input type="text" name="image" placeholder="new image url" />
+				<br /><br />
 
 					Title: <input type="text" name="title" placeholder="title" />
+					<br /><br />
 
 					Description: <input type="text" name="description" placeholder="description" />
+					<br /><br />
 
-					Category: <input type="text" name="category" placeholder="category" />
+					stock: {this.props.instock}
+					<br /><br />
 
 					Price: <input type="number" name="price" placeholder="price" />
+					<br /><br />
+
 					
-                    <input type="submit" name="" value="Create Product" />
+                    <button type="submit" name="" value="Create Product">Create</button>
 				</form>
 
 			</DefaultLayout>

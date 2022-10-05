@@ -70,7 +70,7 @@ const showEditView = (req, res) => {
 		if (err) {
 			res.status(400).json(err);
 		} else {
-			res.status(200).render("products/Edit", { product: foundProduct });
+			res.status(200).render("products/Edit", { products: foundProduct });
 		}
 	});
 };
@@ -81,7 +81,7 @@ const showOneProduct = (req, res) => {
 		if (err) {
 			res.status(400).json(err);
 		} else {
-			res.status(200).render("products/Show", { product: foundProduct });
+			res.status(200).render("products/Show", { products: foundProduct });
 		}
 	});
 };
@@ -117,11 +117,11 @@ const clearData = (req, res) => {
 module.exports = {
 	findAllProducts,
 	showNewView,
-	createNewProduct,
-	showOneProduct,
-	seedData,
-	showEditView,
-	updateOneProduct,
 	deleteOneProduct,
+	updateOneProduct,
+	createNewProduct,
+	showEditView,
+	seedData,
 	clearData,
+	showOneProduct,
 };

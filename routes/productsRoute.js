@@ -3,14 +3,14 @@ const router = express.Router();
 
 
 const { 
+    findAllProducts ,
     showNewView,
-    seedData, 
-    showEditView, 
-    showOneProduct, 
-    createNewProduct, 
-    updateOneProduct, 
     deleteOneProduct, 
-    findAllProducts 
+    updateOneProduct, 
+    createNewProduct, 
+    showEditView, 
+    seedData, 
+    showOneProduct, 
 } = require('../controllers/productController');
 
 

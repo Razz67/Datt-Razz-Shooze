@@ -20,8 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(express.static("public"));
-app.use(express.static("public + images"));
-
+// app.use(express.static("images"));
 
 app.use("/products", productsRoute);
 

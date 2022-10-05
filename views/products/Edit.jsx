@@ -3,7 +3,7 @@ const DefaultLayout = require("../layouts/DefaultLayout");
 
 class Edit extends React.Component {
 	render() {
-        const {_id, title, description, category, price, image} = products;
+        const {_id, title, description, category, price, instock,image} = this.props.products;
 									
 
 		return (
@@ -11,21 +11,30 @@ class Edit extends React.Component {
 
 				<h1>{title}</h1>
 
-				<form action={`/logs/${_id}?_method=PUT`} method="POST">
+				<form action={`/products/${_id}?_method=PUT`} method="POST">
 
 					Category:{" "}<input type="text" id="category" name="category"
 						defaultValue={category} />
+						<br /><br />
 
 					Image:{" "}<input type="text" id="image" name="image" defaultValue={image} />
+					<br /> <br />
 
 					Description:{" "}<input type="textarea" id="description" name="description"
 						defaultValue={description} />
+						<br /><br />
 
 					Price:{" "}<input type="number" id="price" name="price" defaultValue={price} />
+					<br /><br />
 					
-                    <input type="checkbox" id="instock" name="instock" defaultChecked={instock} />
+                    Stock:{" "}<input type="checkbox" id="instock" name="instock" defaultChecked={instock} />
+					<br /><br />
+
+
+					<a href={`/products/${_id}/edit`}>Back</a>
+					<br /><br />
 					
-                    <input type="submit" value="Edit" />
+                    <button type="submit" value="Edit">Edit</button>
 				</form>
 			</DefaultLayout>
 		);

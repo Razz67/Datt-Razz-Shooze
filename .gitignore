@@ -1,3 +1,4 @@
 /node_modules
 /.env
 /resources.md
+/public/css/cardStyles.scss

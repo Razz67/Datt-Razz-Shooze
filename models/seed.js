@@ -5,8 +5,7 @@ const seed = [
 		description: "This is a bucket hat",
 		price: 30,
 		instock: true,
-		image:
-			"https://www.bing.com/images/search?q=images&id=A6725414726B92D86620C1A564958B41D294459D&FORM=IQFRBA",
+		image: URL="/images/cowboy1.jpg"
 	},
 	{
 		category: "Snapback",
