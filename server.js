@@ -23,7 +23,7 @@ app.use(express.static("public"));
 
 app.get("/", (req, res) => {
 	res.redirect("/products");
-}")
+});
 // app.use(express.static("images"));
 
 app.use("/products", productsRoute);
