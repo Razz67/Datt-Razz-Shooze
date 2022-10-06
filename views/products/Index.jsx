@@ -15,7 +15,8 @@ class Index extends React.Component {
 						return (
 							<div className="wrapper" key={_id}>
 								<img src={image} />
-								<a href={`/products/${_id}/edit`}>Edit</a>;
+
+								<a href={`/products/${_id}/edit`}>{title}</a>
 								<div className="desc">{description}</div>
 								<div className="price">${price.toFixed(2)}</div>
 								<div className="quantity">Quantity In Stock: {quantity}</div>
