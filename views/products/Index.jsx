@@ -6,7 +6,7 @@ class Index extends React.Component {
 		const { products } = this.props;
 
 		return (
-			<DefaultLayout>
+			<DefaultLayout title="Index Page">
 			
 					<h1 className="header">Datt Razz Shoozz</h1>
 					{products.map((products) => {
@@ -15,12 +15,10 @@ class Index extends React.Component {
 						return (
 							<div className="wrapper" key={_id}>
 								<img src={image} />
-								<a className="title" href={`/products/${_id}`}>
-									{title}
-								</a>
+								<a href={`/products/${_id}/edit`}>Edit</a>;
 								<div className="desc">{description}</div>
 								<div className="price">${price.toFixed(2)}</div>
-								<div className="quantity">Quantity In Stock:{" "}{quantity}</div>
+								<div className="quantity">Quantity In Stock: {quantity}</div>
 								<div className="instock">{instock}</div>
 							</div>
 						);

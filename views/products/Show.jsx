@@ -8,9 +8,12 @@ class Show extends React.Component {
 			this.props.products;
 
 		return (
-			<DefaultLayout title={`${title} details`} productGroup="products">
+			<DefaultLayout title="Show Page" productGroup="products">
 				<div className="wrapper">
-					<h1>{title}</h1>
+					<nav>
+						<a href={"/products"}>Back to Products</a>
+					</nav>
+					<h1>Show Product</h1>
 					<h3>{category}</h3>
 					<img src={image} />
 					<p>{`Product Description: ${description}`}</p>

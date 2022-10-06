@@ -6,7 +6,7 @@ class Edit extends React.Component {
         const {_id, title, description, category, price, instock,image} = this.props.products;
 
 		return (
-			<DefaultLayout title={`Edit ${title}`} productGroup="products">
+			<DefaultLayout title="Edit Page" productGroup="products">
 				<nav>
 						<a href={"/products"}>Back to Products</a>
 				</nav>

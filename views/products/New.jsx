@@ -5,7 +5,7 @@ class New extends React.Component {
 	render() {
 		return (
 
-			<DefaultLayout className="bg" title="New Product" productGroup="products">
+			<DefaultLayout className="bg" title="New Page" productGroup="products">
 				<h1>Create New Product</h1>
 
 				<form action="/products" method="POST">
@@ -32,7 +32,7 @@ class New extends React.Component {
 					<br /><br />
 
 					
-                    <button type="submit" name="" value="Create Product">Create</button>
+                    <button type="submit" name="" value="Create Product">Create Product</button>
 				</form>
 
 			</DefaultLayout>
