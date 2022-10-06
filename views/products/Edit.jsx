@@ -8,11 +8,7 @@ class Edit extends React.Component {
 		return (
 			<DefaultLayout title={`Edit ${title}`} productGroup="products">
 				<nav>
-					<ul>
-					<li>
 						<a href={"/products"}>Back to Products</a>
-					</li>
-					</ul>
 				</nav>
 				<h1>Edit Product</h1>
 				<img src="/images/shoe4.jpg" />
